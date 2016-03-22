@@ -1,20 +1,20 @@
 #Animate.css
-*Just-add-water CSS animation*
 
-`animate.css` is a bunch of cool, fun, and cross-browser animations for you to use in your projects. Great for emphasis, home pages, sliders, and general just-add-water-awesomeness.
+`animate.css`是一个很酷,很有趣的跨浏览器动画库。
 
-##Basic Usage
-1. Include the stylesheet on your document's `<head>`
+##基本使用
+
+1. 在`<head>`处添加样式表
 
   ```html
   <head>
     <link rel="stylesheet" href="animate.min.css">
   </head>
   ```
-2. Add the class `animated` to the element you want to animate.
- You may also want to include the class `infinite` for an infinite loop.
+2. 在需要应用动画的元素上添加`animated`类。
+ 注：`infinite`类表示无限循环。
 
-3. Finally you need to add one of the following classes:
+3. 最后还需要添加以下具体的动画类：
 
   * `bounce`
   * `flash`
@@ -92,15 +92,15 @@
   * `slideOutRight`
   * `slideOutUp`
 
-Full example:
+举例：
 ```html
 <h1 class="animated infinite bounce">Example</h1>
 ```
 
-[Check out all the animations here!](https://daneden.github.io/animate.css/)
+[点击此处查看所有动画](https://daneden.github.io/animate.css/)
 
-##Usage
-To use animate.css in your website, simply drop the stylesheet into your document's `<head>`, and add the class `animated` to an element, along with any of the animation names. That's it! You've got a CSS animated element. Super!
+##使用
+在你的网站使用animate.css，首先在`<head>`包含样式表链接，接着为元素添加`animated`类名，再添加你具体用到的动画类名，就这么简单！
 
 ```html
 <head>
@@ -108,29 +108,24 @@ To use animate.css in your website, simply drop the stylesheet into your documen
 </head>
 ```
 
-You can do a whole bunch of other stuff with animate.css when you combine it with jQuery or add your own CSS rules. Dynamically add animations using jQuery with ease:
+可以结合jQuery或自定义的CSS规则来使用animate.css
+使用jQuery动态添加动画：
 
 ```javascript
 $('#yourElement').addClass('animated bounceOutLeft');
 ```
 
-You can also detect when an animation ends:
-
-<!--
-Before you make changes to this file, you should know that $('#yourElement').one() is *NOT A TYPO*
-
-http://api.jquery.com/one/
--->
+监听动画结束事件：
 
 ```javascript
 $('#yourElement').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', doSomething);
 ```
 
-[View a video tutorial](https://www.youtube.com/watch?v=CBQGl6zokMs) on how to use Animate.css with jQuery here. 
+[点击此处查看视频教程](https://www.youtube.com/watch?v=CBQGl6zokMs) 结合JQuery使用Animate.css。 
 
-**Note:** `jQuery.one()` is used when you want to execute the event handler at most *once*. More information [here](http://api.jquery.com/one/).
+**注意:** `jQuery.one()` 用于只执行一次事件回调。更多信息 [点击这里](http://api.jquery.com/one/).
 
-You can also extend jQuery to add a function that does it all for you:
+可以扩展一个jQuery插件来简化使用：
 
 ```javascript
 $.fn.extend({
@@ -143,13 +138,13 @@ $.fn.extend({
 });
 ```
 
-And use it like this:
+这样使用：
 
 ```javascript
 $('#yourElement').animateCss('bounce');
 ```
 
-You can change the duration of your animations, add a delay or change the number of times that it plays:
+可以在CSS中改变动画的持续时间，延迟时间，播放次数：
 
 ```css
 #yourElement {
@@ -159,17 +154,17 @@ You can change the duration of your animations, add a delay or change the number
 }
 ```
 
-*Note: be sure to replace "vendor" in the CSS with the applicable vendor prefixes (webkit, moz, etc)*
+*注意：使用浏览器前缀(webkit, moz, etc)替换CSS中的"vendor"*
 
-## Custom Builds
-Animate.css is powered by [gulp.js](http://gulpjs.com/), and you can create custom builds pretty easily. First of all, you’ll need Gulp and all other dependencies:
+## 自定义构建
+Animate.css使用[gulp.js](http://gulpjs.com/)构建，你可以很容易地创建自定义构建。首先你需要Gulp和其它依赖：
 
 ```sh
 $ cd path/to/animate.css/
 $ sudo npm install
 ```
 
-Next, run `gulp` to compile your custom builds. For example, if you want only some of the the “attention seekers”, simply edit the `animate-config.json` file to select only the animations you want to use.
+接着，运行 `gulp` 来编译自定义构建。例如，你只需要部分“attention seekers”, 简单地编辑 `animate-config.json` 文件来选择你需要使用的动画名。
 
 ```javascript
 "attention_seekers": {
